@@ -1,0 +1,61 @@
+<nav>
+	<div class="img"></div>
+
+	<h1>Download Flaptus</h1>
+
+	<% $versions.each do |version, url| %> 
+		<a href="<%= url %>">
+			<button></button>
+		</a>
+		<% break %>
+	<% end %>
+</nav>
+	
+	
+<main>
+	<h3>Ready to start the Flaptus high score grind?</h1>
+
+	<div class="container">
+		<ul>
+			<% $versions.each do |version, url| %>
+				<li><a href="<%= url %>" alt="Download Flaptus v<%= version %>"><span><%= version %></span></a></li> 
+			<% end %>
+		</ul>
+	</div>
+</main>
+
+<section class="footer" id="footer">
+	<div class="logo">
+		<h1>Flaptus</h1>
+
+	</div>
+
+	<div class="feedback">
+		<h3>Feedback? Bugs?!</h3>
+
+		<p>If you have any constructive feedback, or want to report some nasty bugs, make an issue on <a href="https://github.com/Flaptus/Flaptus"><span>the repo</span></a>.</p>
+	</div>
+
+	<div class="links">
+		<a href="https://flaptus.com/#gameplay"><span>Gameplay</span></a>
+		
+		<a href="https://flaptus.com/#how"><span>How</span></a>
+
+		<a href="https://flaptus.com/#leaderboard"><span>Leaderboard</span></a>
+
+		<a href="https://flaptus.com/#coming-soon"><span>Coming soon</span></a>
+
+		<a href="https://flaptus.com/#ready"><span>Ready</span></a>
+
+		<a href="https://github.com/Flaptus"><span>Source code</span></a>
+	</div>
+
+	<div class="play">
+		<% $versions.each do |version, url| %> 
+			<a href="<%= url %>">
+				<button>Play now!</button>
+			</a>
+		<% break %>
+	<% end %>
+	</div>
+</section>
