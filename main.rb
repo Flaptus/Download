@@ -1,28 +1,21 @@
-REPO_URL = "https://github.com/Flaptus/Flaptus"
+$REPO_URL = "Flaptus/Flaptus"
+$ZIPS = ["v1.1.0", "v1.0.0", "v0.1-aplha"]
 
+require "json"
 require "sinatra"
-require "nokogiri"
 require "open-uri"
 
 set :bind, "0.0.0.0"
 
-$versions = {}
+$versions = []
+    
 Thread.new do
 	loop do
-		page = 1
-		loop do
-			count = 0
-			Nokogiri::HTML.parse(URI.open("#{REPO_URL}/releases?page=#{page}")).xpath("//a").each do |tag|
-				if tag[:href].split("/")[-1] == "flaptus.exe"
-					$versions[tag[:href].split("/v")[1].split("/")[0]] = "https://github.com/#{tag[:href]}"
-					count += 1
-				end
-			end
-			break if count == 0
-			page += 1
-		end
+		$versions = JSON.load(URI.open("https://api.github.com/repos/#{$REPO_URL}/tags").read).map { |tag| p tag; tag["name"] }
 
 		sleep 600
+
+        `rm open-uri*`
 	end
 end
 

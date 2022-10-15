@@ -17,8 +17,8 @@
 
 	<div class="container">
 		<ul>
-			<% $versions.each do |version, url| %>
-				<li><a href="<%= url %>" alt="Download Flaptus v<%= version %>"><span><%= version %></span></a></li> 
+			<% $versions.each do |version| %>
+				<li><a href="https://github.com/<%= $REPO_URL %>/releases/download/<%= version %>/flaptus.<%= $ZIPS.include?(version) ? "zip" : "exe" %>" alt="Download Flaptus <%= version %>"><span><%= version %></span></a></li> 
 			<% end %>
 		</ul>
 	</div>
@@ -27,7 +27,6 @@
 <section class="footer" id="footer">
 	<div class="logo">
 		<h1>Flaptus</h1>
-
 	</div>
 
 	<div class="feedback">

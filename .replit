@@ -14,3 +14,5 @@ pattern = "**/*.rb"
 
 [languages.ruby.languageServer]
 start = ["solargraph", "stdio"]
+
+
