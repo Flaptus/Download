@@ -1,2 +1,4 @@
 .bundle/
 open-uri*
+.replit
+replit.nix
