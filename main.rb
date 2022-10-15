@@ -11,7 +11,7 @@ $versions = []
     
 Thread.new do
 	loop do
-		$versions = JSON.load(URI.open("https://api.github.com/repos/#{$REPO_URL}/tags").read).map { |tag| p tag; tag["name"] }
+		$versions = JSON.load(URI.open("https://api.github.com/repos/#{$REPO_URL}/tags").read).map { |tag| tag["name"] }
 
 		sleep 600
 
