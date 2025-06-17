@@ -2,3 +2,4 @@
 open-uri*
 .replit
 replit.nix
+.idea/
